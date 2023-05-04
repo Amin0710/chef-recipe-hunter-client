@@ -22,8 +22,8 @@ const Navigationbar = () => {
 				</Navbar.Brand>
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="me-auto">
-						<Nav.Link href="#features">Home</Nav.Link>
-						<Nav.Link href="#pricing">Blog</Nav.Link>
+						<Nav.Link href="/features">Home</Nav.Link>
+						<Nav.Link href="/pricing">Blog</Nav.Link>
 					</Nav>
 					<Navbar.Brand id="large-screen" href="#home" className="mx-auto">
 						<div className="d-flex align-items-center">
@@ -36,9 +36,13 @@ const Navigationbar = () => {
 							</div>
 						</div>
 					</Navbar.Brand>
-					<Nav className="ms-auto">
-						<Nav.Link href="#pricing">picture</Nav.Link>
-						<Button variant="secondary">Logout</Button>
+					<Nav className="ms-auto d-flex  align-items-center">
+						<div>
+							<img src={logo} alt="" width={"42px"} height={"42px"} />
+							<Link to="/login" className="ms-2">
+								<Button variant="secondary">Logout</Button>
+							</Link>
+						</div>
 						<Link to="/login">
 							<Button variant="secondary">Login</Button>
 						</Link>
