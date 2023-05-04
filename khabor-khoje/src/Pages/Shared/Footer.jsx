@@ -31,13 +31,6 @@ const Footer = () => {
 						<p>Careers</p>
 					</div>
 					<div>
-						<p className="columHead">Product</p>
-						<p>Prototype </p>
-						<p>Plans & Pricing</p>
-						<p>Integrations</p>
-						<p>Customers</p>
-					</div>
-					<div>
 						<p className="columHead">Support</p>
 						<p>Help Desk</p>
 						<p>Sales</p>
