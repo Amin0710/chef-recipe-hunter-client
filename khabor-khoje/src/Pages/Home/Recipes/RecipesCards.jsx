@@ -15,7 +15,7 @@ const RecipesCards = ({ recipe }) => {
 				<ListGroup.Item>rating: {recipe.rating}</ListGroup.Item>
 			</ListGroup>
 			<Card.Body>
-				<Button variant="primary">View Details</Button>
+				<Button variant="success">View Details</Button>
 			</Card.Body>
 		</Card>
 	);

@@ -1,12 +1,21 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Register = () => {
 	return (
 		<Container className="w-25 mx-auto">
 			<h3>Please Register</h3>
+			<div className="d-flex justify-content-around mb-3">
+				<Button variant="outline-primary">
+					<FaGoogle /> Register with Google
+				</Button>
+				<Button variant="outline-secondary">
+					<FaGithub /> Register with Github
+				</Button>
+			</div>
 			<Form>
 				<Form.Group className="mb-3" controlId="formBasicEmail">
 					<Form.Label>Name</Form.Label>
