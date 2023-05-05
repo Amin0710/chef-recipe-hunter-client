@@ -15,7 +15,6 @@ const Chefs = () => {
 			.catch((error) => console.error(error));
 	}, []);
 
-	console.log(chefs);
 	return (
 		<div className="d-flex flex-column align-items-center">
 			<p className="sectionHead">Our Chefs</p>

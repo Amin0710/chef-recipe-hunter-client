@@ -7,7 +7,7 @@ import tw from "../../../public/assets/Logo/tw.png";
 
 const Footer = () => {
 	return (
-		<footer>
+		<footer className="mt-5">
 			<div id="footer-content">
 				<div id="footer-content-top">
 					<div>
