@@ -9,7 +9,7 @@ const Navigationbar = () => {
 		<Navbar collapseOnSelect expand="lg" bg="light" variant="light">
 			<Container>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-				<Navbar.Brand id="small-screen" href="#home" className="mx-auto">
+				<Navbar.Brand id="small-screen" href="/" className="mx-auto">
 					<div className="d-flex align-items-center">
 						<img src={logo} alt="" width={"90px"} height={"90px"} />
 						<div className="text-center">
@@ -22,10 +22,10 @@ const Navigationbar = () => {
 				</Navbar.Brand>
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="me-auto">
-						<Nav.Link href="/features">Home</Nav.Link>
-						<Nav.Link href="/pricing">Blog</Nav.Link>
+						<Nav.Link href="/">Home</Nav.Link>
+						<Nav.Link href="/blog">Blog</Nav.Link>
 					</Nav>
-					<Navbar.Brand id="large-screen" href="#home" className="mx-auto">
+					<Navbar.Brand id="large-screen" href="/" className="mx-auto">
 						<div className="d-flex align-items-center">
 							<img src={logo} alt="" width={"90px"} height={"90px"} />
 							<div className="text-center">
