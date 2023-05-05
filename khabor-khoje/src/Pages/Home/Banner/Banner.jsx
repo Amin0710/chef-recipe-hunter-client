@@ -10,8 +10,7 @@ const Banner = () => {
 				<div className="d-flex justify-content-between align-items-center">
 					<div className="banner-words-content ms-3">
 						<p id="bigHead">
-							Discover Authentic{" "}
-							<span id="bigHead-highlight">Bangladeshi </span>
+							Discover Authentic <span id="bigHead-highlight">Bangladeshi</span>
 							Cuisine Today!
 						</p>
 						<p id="smallHead">

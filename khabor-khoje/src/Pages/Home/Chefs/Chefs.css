@@ -1,0 +1,13 @@
+.sectionHead {
+	font-weight: 800;
+	font-size: 48px;
+	text-align: center;
+	margin-bottom: 16px;
+	margin-top: 100px;
+}
+.sectionBody {
+	font-weight: 500;
+	color: #757575;
+	text-align: center;
+	margin-bottom: 32px;
+}
