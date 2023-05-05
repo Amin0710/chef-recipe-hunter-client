@@ -14,7 +14,6 @@ const Recipes = () => {
 			.catch((error) => console.error(error));
 	}, []);
 
-	console.log(recipes);
 	return (
 		<div className="d-flex flex-column align-items-center">
 			<p className="sectionHead">Our Top Recipes</p>
