@@ -1,0 +1,38 @@
+.banner {
+	border-radius: 8px;
+	background-color: #f8f9fa;
+	width: min(1300px, 80%);
+}
+#banner-img {
+	margin-top: 30px;
+	max-width: 100%;
+	border-radius: 8px;
+}
+#bigHead {
+	font-weight: 800;
+	font-size: 80px;
+	margin-bottom: 24px;
+}
+#bigHead-highlight {
+	background-color: green;
+	color: red;
+	border-radius: 8px;
+}
+#smallHead {
+	font-size: 18px;
+	color: #757575;
+	margin-bottom: 32px;
+}
+
+@media only screen and (max-width: 600px) {
+	.banner {
+		flex-direction: column;
+		padding-top: 30px;
+	}
+	.banner img {
+		width: 100%;
+	}
+	#bigHead {
+		font-size: 40px;
+	}
+}
