@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import logo from "../../../public/assets/logo.png";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../firebase/Provider/AuthProvider";
 
 const Navigationbar = () => {
@@ -34,9 +34,13 @@ const Navigationbar = () => {
 					</div>
 				</Navbar.Brand>
 				<Navbar.Collapse id="responsive-navbar-nav">
-					<Nav className="me-auto">
-						<Nav.Link href="/home">Home</Nav.Link>
-						<Nav.Link href="/blog">Blog</Nav.Link>
+					<Nav>
+						<NavLink to="/home" activeClassName="active" className="nav-link">
+							Home
+						</NavLink>
+						<NavLink to="/blog" activeClassName="active" className="nav-link">
+							Blog
+						</NavLink>
 					</Nav>
 					<Navbar.Brand id="large-screen" href="/home" className="mx-auto">
 						<div className="d-flex align-items-center">

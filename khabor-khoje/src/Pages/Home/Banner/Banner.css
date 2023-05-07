@@ -33,6 +33,7 @@
 		width: 100%;
 	}
 	#bigHead {
-		font-size: 40px;
+		font-size: 25px;
+		word-wrap: break-word;
 	}
 }

@@ -11,7 +11,7 @@ const Banner = () => {
 					<div className="banner-words-content ms-3">
 						<p id="bigHead">
 							Discover Authentic <span id="bigHead-highlight">Bangladeshi</span>
-							Cuisine Today!
+							&nbsp;Cuisine Today!
 						</p>
 						<p id="smallHead">
 							Savor the Taste of Home: Delicious Bangladeshi Recipes for You to
