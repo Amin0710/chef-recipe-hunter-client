@@ -6,10 +6,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../firebase/Provider/AuthProvider";
 
 const Login = () => {
+	const { user } = useContext(AuthContext);
+	const navigate = useNavigate();
+	if (user) {
+		navigate("/home", { replace: true });
+	}
+
 	const [error, setError] = useState("");
 	const { signIn, handleGoogleLogin, handleGithubLogin } =
 		useContext(AuthContext);
-	const navigate = useNavigate();
 	const location = useLocation();
 	const from = location.state?.from?.pathname || "/home";
 

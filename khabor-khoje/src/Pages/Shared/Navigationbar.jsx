@@ -7,6 +7,17 @@ import { AuthContext } from "../../firebase/Provider/AuthProvider";
 
 const Navigationbar = () => {
 	const { user, logOut } = useContext(AuthContext);
+
+	const handleMouseOver = () => {
+		const userName = document.getElementById("userName");
+		userName.classList.remove("d-none");
+	};
+
+	const handleMouseOut = () => {
+		const userName = document.getElementById("userName");
+		userName.classList.add("d-none");
+	};
+
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="light" variant="light">
 			<Container>
@@ -40,10 +51,9 @@ const Navigationbar = () => {
 					</Navbar.Brand>
 					<Nav className="ms-auto d-flex  align-items-center">
 						{!!user && (
-							<div>
-								<Link className="text-success me-2">{user.displayName}</Link>
+							<div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
 								<img
-									src={user.photoURL}
+									src={user?.photoURL}
 									alt=""
 									width={"42px"}
 									height={"42px"}
@@ -54,6 +64,11 @@ const Navigationbar = () => {
 										Logout
 									</Button>
 								</Link>
+								<p
+									className="text-success text-decoration-none me-2 d-none"
+									id="userName">
+									{user?.displayName}
+								</p>
 							</div>
 						)}
 						{!!user || (

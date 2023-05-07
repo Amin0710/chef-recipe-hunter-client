@@ -34,7 +34,9 @@ const AuthProvider = ({ children }) => {
 		}
 		return createUserWithEmailAndPassword(auth, email, password)
 			.then((result) => {
-				return updateProfile(result.user, user);
+				updateProfile(result.user, user);
+				logOut();
+				return;
 			})
 			.finally(() => {
 				setLoading(false);

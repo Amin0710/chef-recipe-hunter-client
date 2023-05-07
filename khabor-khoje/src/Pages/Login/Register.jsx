@@ -1,12 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../firebase/Provider/AuthProvider";
 
 const Register = () => {
 	const [error, setError] = useState("");
 	const { createUser } = useContext(AuthContext);
+	const navigate = useNavigate();
 	const [accepted, setAccepted] = useState(false);
 
 	const handleRegister = (event) => {
@@ -28,9 +29,8 @@ const Register = () => {
 			return;
 		}
 		createUser(email, password, { displayName: name, photoURL: photo })
-			.then((result) => {
-				const createdUser = result.user;
-				console.log(createdUser);
+			.then(() => {
+				navigate("/login", { replace: true });
 			})
 			.catch((error) => {
 				console.log(error);
