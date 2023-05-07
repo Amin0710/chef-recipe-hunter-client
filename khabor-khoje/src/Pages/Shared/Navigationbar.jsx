@@ -35,10 +35,10 @@ const Navigationbar = () => {
 				</Navbar.Brand>
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav>
-						<NavLink to="/home" activeClassName="active" className="nav-link">
+						<NavLink to="/home" activeclassname="active" className="nav-link">
 							Home
 						</NavLink>
-						<NavLink to="/blog" activeClassName="active" className="nav-link">
+						<NavLink to="/blog" activeclassname="active" className="nav-link">
 							Blog
 						</NavLink>
 					</Nav>

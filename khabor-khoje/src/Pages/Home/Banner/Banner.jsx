@@ -8,7 +8,7 @@ const Banner = () => {
 		<div className="d-flex justify-content-center">
 			<div className="banner d-flex justify-content-between">
 				<div className="d-flex justify-content-between align-items-center">
-					<div className="banner-words-content ms-3">
+					<div className="ms-3">
 						<p id="bigHead">
 							Discover Authentic <span id="bigHead-highlight">Bangladeshi</span>
 							&nbsp;Cuisine Today!

@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const ChefCards = ({ chef }) => {
 	// Show only the first line in the description
@@ -25,7 +26,9 @@ const ChefCards = ({ chef }) => {
 				<ListGroup.Item>rating: {chef.rating}</ListGroup.Item>
 			</ListGroup>
 			<Card.Body>
-				<Button variant="primary">View Recipes</Button>
+				<Link to={`/chefs/${chef.id}`}>
+					<Button variant="primary">View Recipes</Button>
+				</Link>
 			</Card.Body>
 		</Card>
 	);

@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const RecipesCards = ({ recipe }) => {
 	return (
@@ -15,7 +16,9 @@ const RecipesCards = ({ recipe }) => {
 				<ListGroup.Item>rating: {recipe.rating}</ListGroup.Item>
 			</ListGroup>
 			<Card.Body>
-				<Button variant="success">View Details</Button>
+				<Link to={`/recipes/${recipe.id}`}>
+					<Button variant="success">View Details</Button>
+				</Link>
 			</Card.Body>
 		</Card>
 	);

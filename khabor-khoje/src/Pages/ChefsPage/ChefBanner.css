@@ -1,0 +1,33 @@
+.banner-words-content {
+	width: 650px;
+}
+#chef-banner-img {
+	margin-top: 30px;
+	width: 650px;
+	border-radius: 8px;
+}
+#chef-bigHead {
+	font-weight: 800;
+	font-size: 50px;
+	margin-bottom: 24px;
+}
+#chef-bigHead-highlight {
+	background-color: green;
+	color: red;
+	border-radius: 8px;
+}
+.smallHead {
+	font-size: 18px;
+	color: #757575;
+	margin-bottom: 32px;
+}
+
+@media only screen and (max-width: 600px) {
+	#chef-banner-img {
+		width: 100%;
+	}
+	#chef-bigHead {
+		font-size: 25px;
+		word-wrap: break-word;
+	}
+}

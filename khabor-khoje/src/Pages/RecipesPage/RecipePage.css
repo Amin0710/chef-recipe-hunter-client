@@ -1,0 +1,11 @@
+#recipe-banner-img {
+	margin-top: 300px;
+	width: 650px;
+	border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+	#recipe-banner-img {
+		width: 100%;
+	}
+}
