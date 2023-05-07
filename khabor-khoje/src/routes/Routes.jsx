@@ -1,4 +1,5 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import LoginLayout from "../layouts/LoginLayout";
 import Main from "../Layouts/main";
 import Blog from "../Pages/Blog/Blog";
 import Home from "../Pages/Home/Home/Home";
@@ -8,23 +9,39 @@ import Register from "../Pages/Login/Register";
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <Main></Main>,
+		element: <LoginLayout></LoginLayout>,
 		children: [
 			{
 				path: "/",
-				element: <Home></Home>,
+				element: <Navigate to="/home"></Navigate>,
 			},
 			{
-				path: "/blog",
-				element: <Blog></Blog>,
-			},
-			{
-				path: "/login",
+				path: "login",
 				element: <Login></Login>,
 			},
 			{
-				path: "/register",
+				path: "register",
 				element: <Register></Register>,
+			},
+		],
+	},
+	{
+		path: "home",
+		element: <Main></Main>,
+		children: [
+			{
+				path: "/home",
+				element: <Home></Home>,
+			},
+		],
+	},
+	{
+		path: "blog",
+		element: <Main></Main>,
+		children: [
+			{
+				path: "/blog",
+				element: <Blog></Blog>,
 			},
 		],
 	},

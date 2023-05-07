@@ -1,22 +1,57 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../firebase/Provider/AuthProvider";
 
 const Register = () => {
+	const [error, setError] = useState("");
+	const { createUser } = useContext(AuthContext);
+	const [accepted, setAccepted] = useState(false);
+
+	const handleRegister = (event) => {
+		event.preventDefault();
+		const form = event.target;
+		const name = form.name.value;
+		const photo = form.photo.value;
+		const email = form.email.value;
+		const password = form.password.value;
+		const confirm = form.confirm.value;
+
+		console.log(name, photo, email, password);
+		setError("");
+		if (password !== confirm) {
+			setError("Your password did not match");
+			return;
+		} else if (password.length < 6) {
+			setError("password must be 6 characters or longer");
+			return;
+		}
+		createUser(email, password, { displayName: name, photoURL: photo })
+			.then((result) => {
+				const createdUser = result.user;
+				console.log(createdUser);
+			})
+			.catch((error) => {
+				console.log(error);
+				if (error.code === "auth/email-already-in-use") {
+					setError("User already exists. Please login.");
+					return;
+				}
+
+				setError(
+					error.message || "Something went wrong. Please try again later."
+				);
+			});
+	};
+
+	const handleAccepted = (event) => {
+		setAccepted(event.target.checked);
+	};
 	return (
 		<Container className="w-25 mx-auto">
 			<h3>Please Register</h3>
-			<div className="d-flex justify-content-around mb-3">
-				<Button variant="outline-primary">
-					<FaGoogle /> Register with Google
-				</Button>
-				<Button variant="outline-secondary">
-					<FaGithub /> Register with Github
-				</Button>
-			</div>
-			<Form>
+			<Form onSubmit={handleRegister}>
 				<Form.Group className="mb-3" controlId="formBasicEmail">
 					<Form.Label>Name</Form.Label>
 					<Form.Control
@@ -55,22 +90,34 @@ const Register = () => {
 					/>
 				</Form.Group>
 
+				<Form.Group className="mb-3" controlId="formBasicPassword">
+					<Form.Label>Password</Form.Label>
+					<Form.Control
+						type="Password"
+						name="confirm"
+						placeholder="Password"
+						required
+					/>
+				</Form.Group>
+
 				<Form.Group className="mb-3" controlId="formBasicCheckbox">
 					<Form.Check
+						onClick={handleAccepted}
 						type="checkbox"
 						name="accept"
 						label="Accept Terms and Conditions"
 					/>
 				</Form.Group>
-				<Button variant="primary" type="submit">
+				<Button variant="primary" disabled={!accepted} type="submit">
 					Register
 				</Button>
 				<br />
 				<Form.Text className="text-secondary">
 					Already Have an Account? <Link to="/login">Login</Link>
 				</Form.Text>
+				<br />
 				<Form.Text className="text-success"></Form.Text>
-				<Form.Text className="text-danger"></Form.Text>
+				<Form.Text className="text-danger">{error}</Form.Text>
 			</Form>
 		</Container>
 	);
