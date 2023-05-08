@@ -53,7 +53,7 @@ const Navigationbar = () => {
 							</div>
 						</div>
 					</Navbar.Brand>
-					<Nav className="ms-auto d-flex  align-items-center">
+					<Nav className="d-flex  align-items-center">
 						{!!user && (
 							<div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
 								<img
