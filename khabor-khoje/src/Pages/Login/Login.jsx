@@ -18,6 +18,11 @@ const Login = () => {
 			navigate(from, { replace: true });
 		});
 
+	const handleGithubLoginLocation = () =>
+		handleGithubLogin().then(() => {
+			navigate(from, { replace: true });
+		});
+
 	const handleLogin = (event) => {
 		event.preventDefault();
 		const form = event.target;
@@ -53,7 +58,7 @@ const Login = () => {
 				<Button variant="outline-primary" onClick={handleGoogleLoginLocation}>
 					<FaGoogle /> Login with Google
 				</Button>
-				<Button variant="outline-secondary" onClick={handleGithubLogin}>
+				<Button variant="outline-secondary" onClick={handleGithubLoginLocation}>
 					<FaGithub></FaGithub> Login with Github
 				</Button>
 			</div>

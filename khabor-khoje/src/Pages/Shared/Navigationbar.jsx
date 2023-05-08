@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from "react";
 import logo from "../../../public/assets/logo.png";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar, Spinner } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../firebase/Provider/AuthProvider";
 
 const Navigationbar = () => {
-	const { user, logOut } = useContext(AuthContext);
+	const { user, loading, logOut } = useContext(AuthContext);
 
 	const handleMouseOver = () => {
 		const userName = document.getElementById("userName");
@@ -75,10 +75,25 @@ const Navigationbar = () => {
 								</p>
 							</div>
 						)}
-						{!!user || (
-							<Link to="/login">
-								<Button variant="secondary">Login</Button>
-							</Link>
+						{loading ? (
+							<div className="d-flex justify-content-center">
+								<Button variant="warning" disabled>
+									<Spinner
+										as="span"
+										animation="grow"
+										size="sm"
+										role="status"
+										aria-hidden="true"
+									/>
+									Loading...
+								</Button>
+							</div>
+						) : (
+							!!user || (
+								<Link to="/login">
+									<Button variant="secondary">Login</Button>
+								</Link>
+							)
 						)}
 					</Nav>
 				</Navbar.Collapse>

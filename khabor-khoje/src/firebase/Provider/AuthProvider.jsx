@@ -68,15 +68,18 @@ const AuthProvider = ({ children }) => {
 
 	const providerGithub = new GithubAuthProvider();
 	const handleGithubLogin = () => {
-		signInWithPopup(auth, providerGithub)
+		setLoading(true);
+		return signInWithPopup(auth, providerGithub)
 			.then((result) => {
 				const logedInUser = result.user;
 				setUser(logedInUser);
+				setLoading(false);
 			})
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
 				console.log(errorCode, errorMessage);
+				setLoading(false);
 			});
 	};
 
