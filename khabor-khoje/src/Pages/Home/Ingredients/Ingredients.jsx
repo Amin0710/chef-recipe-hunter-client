@@ -8,7 +8,9 @@ const Ingredients = () => {
 	const [ingredients, setIngredients] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:5001/recipes")
+		fetch(
+			"http://b7a10-chef-recipe-hunter-server-side-amin0710-amin0710.vercel.app/recipes"
+		)
 			.then((res) => res.json())
 			.then((data) => setIngredients(data))
 			.catch((error) => console.error(error));

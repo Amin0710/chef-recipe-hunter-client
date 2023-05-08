@@ -1,10 +1,6 @@
 Project Overview
-This project is a website built using React, React Router, Bootstrap, Firebase, and Express.js. The website uses data from four different APIs which are listed below:
-
-[API link 1]
-[API link 2]
-[API link 3]
-[API link 4]
+This project is a website built using React, React Router, Bootstrap, Firebase, and Express.js. The website uses data from four different APIs, all these selfmade links can be found here:
+b7a10-chef-recipe-hunter-server-side-amin0710-amin0710.vercel.app/
 
 Features
 The website has several features that make it user-friendly and easy to navigate. Some of these features are:

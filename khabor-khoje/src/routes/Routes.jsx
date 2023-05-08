@@ -60,7 +60,9 @@ const router = createBrowserRouter([
 				),
 				errorElement: <ErrorPageContent />,
 				loader: ({ params }) =>
-					fetch(`http://localhost:5001/chefs/${params.id}`),
+					fetch(
+						`http://b7a10-chef-recipe-hunter-server-side-amin0710-amin0710.vercel.app/chefs/${params.id}`
+					),
 			},
 		],
 	},
@@ -78,7 +80,9 @@ const router = createBrowserRouter([
 				),
 				errorElement: <ErrorPageContent />,
 				loader: ({ params }) =>
-					fetch(`http://localhost:5001/recipes/${params.id}`),
+					fetch(
+						`http://b7a10-chef-recipe-hunter-server-side-amin0710-amin0710.vercel.app/recipes/${params.id}`
+					),
 			},
 		],
 	},
