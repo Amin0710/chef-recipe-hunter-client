@@ -50,15 +50,19 @@ const AuthProvider = ({ children }) => {
 
 	const providerGoogle = new GoogleAuthProvider();
 	const handleGoogleLogin = () => {
-		signInWithPopup(auth, providerGoogle)
+		setLoading(true);
+		return signInWithPopup(auth, providerGoogle)
 			.then((result) => {
-				const logedInUser = result.user;
-				setUser(logedInUser);
+				const loggedInUser = result.user;
+				setUser(loggedInUser);
+				setLoading(false);
 			})
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
 				console.log(errorCode, errorMessage);
+				setLoading(false);
+				throw error; // re-throw the error to be caught by the caller
 			});
 	};
 
@@ -92,8 +96,6 @@ const AuthProvider = ({ children }) => {
 			return unsubscribe();
 		};
 	}, []);
-
-	console.log(user);
 
 	const authInfo = {
 		user,

@@ -6,17 +6,17 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../firebase/Provider/AuthProvider";
 
 const Login = () => {
-	const { user } = useContext(AuthContext);
-	const navigate = useNavigate();
-	if (user) {
-		navigate("/home", { replace: true });
-	}
-
 	const [error, setError] = useState("");
 	const { signIn, handleGoogleLogin, handleGithubLogin } =
 		useContext(AuthContext);
 	const location = useLocation();
+	const navigate = useNavigate();
 	const from = location.state?.from?.pathname || "/home";
+
+	const handleGoogleLoginLocation = () =>
+		handleGoogleLogin().then(() => {
+			navigate(from, { replace: true });
+		});
 
 	const handleLogin = (event) => {
 		event.preventDefault();
@@ -25,9 +25,7 @@ const Login = () => {
 		const password = form.password.value;
 
 		signIn(email, password)
-			.then((result) => {
-				const loggedUser = result.user;
-				console.log(loggedUser);
+			.then(() => {
 				navigate(from, { replace: true });
 			})
 			.catch((error) => {
@@ -52,7 +50,7 @@ const Login = () => {
 		<Container className="w-25 mx-auto mt-5 pb-5 mb-10">
 			<h3>Please Login</h3>
 			<div className="d-flex justify-content-around mb-3">
-				<Button variant="outline-primary" onClick={handleGoogleLogin}>
+				<Button variant="outline-primary" onClick={handleGoogleLoginLocation}>
 					<FaGoogle /> Login with Google
 				</Button>
 				<Button variant="outline-secondary" onClick={handleGithubLogin}>
