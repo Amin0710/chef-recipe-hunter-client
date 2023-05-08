@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import LazyLoad from "react-lazy-load";
 import "./ChefBanner.css";
 
 const ChefBanner = ({ chef }) => {
@@ -27,7 +28,9 @@ const ChefBanner = ({ chef }) => {
 					</div>
 				</div>
 				<div>
-					<img id="chef-banner-img" src={chef.picture} alt="" />
+					<LazyLoad threshold={0.95}>
+						<img id="chef-banner-img" src={chef.picture} alt="" />
+					</LazyLoad>
 				</div>
 			</div>
 		</div>

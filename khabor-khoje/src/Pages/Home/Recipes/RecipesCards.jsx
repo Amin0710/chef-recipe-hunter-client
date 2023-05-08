@@ -2,12 +2,15 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 
 const RecipesCards = ({ recipe }) => {
 	return (
 		<Card style={{ width: "18rem" }}>
-			<Card.Img variant="top" src={recipe.picture} height={"200px"} />
+			<LazyLoad threshold={0.95}>
+				<Card.Img variant="top" src={recipe.picture} height={"200px"} />
+			</LazyLoad>
 			<Card.Body>
 				<Card.Title>{recipe.recipe_name}</Card.Title>
 			</Card.Body>

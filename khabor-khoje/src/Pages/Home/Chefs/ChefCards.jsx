@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 
 const ChefCards = ({ chef }) => {
@@ -12,7 +13,9 @@ const ChefCards = ({ chef }) => {
 	);
 	return (
 		<Card style={{ width: "18rem" }}>
-			<Card.Img variant="top" src={chef.picture} height={"200px"} />
+			<LazyLoad threshold={0.95}>
+				<Card.Img variant="top" src={chef.picture} height={"200px"} />
+			</LazyLoad>
 			<Card.Body>
 				<Card.Title>{chef.name}</Card.Title>
 				<Card.Text>{small_des}</Card.Text>
