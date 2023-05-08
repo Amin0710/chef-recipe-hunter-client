@@ -61,7 +61,7 @@ const router = createBrowserRouter([
 				errorElement: <ErrorPageContent />,
 				loader: ({ params }) =>
 					fetch(
-						`http://b7a10-chef-recipe-hunter-server-side-amin0710-amin0710.vercel.app/chefs/${params.id}`
+						`https://b7a10-chef-recipe-hunter-server-side-amin0710-amin0710.vercel.app/chefs/${params.id}`
 					),
 			},
 		],
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
 				errorElement: <ErrorPageContent />,
 				loader: ({ params }) =>
 					fetch(
-						`http://b7a10-chef-recipe-hunter-server-side-amin0710-amin0710.vercel.app/recipes/${params.id}`
+						`https://b7a10-chef-recipe-hunter-server-side-amin0710-amin0710.vercel.app/recipes/${params.id}`
 					),
 			},
 		],
