@@ -1,3 +1,5 @@
+Live link:https://khabar-khojo.web.app/
+
 Project Overview
 This project is a website built using React, React Router, Bootstrap, Firebase, and Express.js. The website uses data from four different APIs, all these selfmade links can be found here:
 b7a10-chef-recipe-hunter-server-side-amin0710-amin0710.vercel.app/
